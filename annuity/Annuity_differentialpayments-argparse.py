@@ -7,7 +7,6 @@
 # write your code here
 import math
 import sys
-import argparse
 
 args = sys.argv
 
@@ -44,9 +43,18 @@ def diff(principal, periods, interest):
 
 if __name__ == '__main__':
 
+    import argparse
+
+    # creating a parser using the argument parser
     parser = argparse.ArgumentParser(description='Calculate annuity or differential_payments')
+
+    # adding the two arguments that are required, type could be annuity or difference
+
     parser.add_argument('--type', type=str, metavar='', required=False, help='Choose type',
                         choices=['annuity', 'diff'])
+
+    # each argument, requires the following arguments
+
     parser.add_argument('--principal', type=int, metavar='', required=False, help='principal')
     parser.add_argument('--payment', type=int, metavar='', required=False, help='monthly payments')
     parser.add_argument('--interest', type=float, metavar='', required=False, help='interest')
